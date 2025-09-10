@@ -1,0 +1,34 @@
+{
+  "name": "farmchain-raspberry-pi",
+  "version": "1.0.0",
+  "description": "Raspberry Pi QR code printer for FarmChain supply chain tracking",
+  "main": "qr-printer.js",
+  "scripts": {
+    "start": "node qr-printer.js",
+    "test": "node qr-printer.js test",
+    "server": "node -e \"const {QRPrinter, startWebServer} = require('./qr-printer.js'); const printer = new QRPrinter(); printer.connect().then(() => startWebServer(printer));\""
+  },
+  "keywords": [
+    "raspberry-pi",
+    "qr-code",
+    "thermal-printer",
+    "supply-chain",
+    "blockchain"
+  ],
+  "dependencies": {
+    "serialport": "^12.0.0",
+    "qrcode": "^1.5.3",
+    "canvas": "^2.11.2",
+    "rpi-gpio": "^2.1.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm",
+    "arm64"
+  ]
+}
